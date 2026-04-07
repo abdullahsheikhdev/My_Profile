@@ -10,6 +10,7 @@ import BlogContent from "@/components/BlogContent";
 import ContactContent from "@/components/ContactContent";
 import ProductsContent from "@/components/ProductsContent";
 import Loding from "@/components/loding";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("ABOUT");
@@ -28,7 +29,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex items-center justify-center p-4 md:p-8">
-      <div className="flex flex-col md:flex-row gap-4 md:gap-8 max-w-[1200px] w-full items-center md:items-stretch">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-6 max-w-315 w-full items-center md:items-stretch">
         
         {/* Sidebar - Horizontal on top in mobile, vertical on left in desktop */}
         <div className="w-full md:w-auto shrink-0 md:pt-4">
@@ -36,7 +37,7 @@ export default function Home() {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex flex-col lg:flex-row flex-1 bg-[#161616] bg-opacity-70 backdrop-blur-sm rounded-3xl shadow-xl w-full p-6 lg:p-0 mt-4 md:mt-0 relative overflow-visible">
+        <div className="flex flex-col lg:flex-row flex-1 h-160 bg-[#222222] bg-opacity-70 backdrop-blur-sm rounded-sm shadow-xl w-full p-6 lg:p-0 mt-4 md:mt-0 relative overflow-visible">
           
           {/* Profile Card slightly overflowing on desktop, stacked normally on mobile */}
           <div className="flex justify-center lg:justify-start z-10 lg:-translate-x-4 lg:-my-4 shrink-0">
@@ -44,13 +45,24 @@ export default function Home() {
           </div>
 
           {/* Right Content */}
-          <div className="flex-1 w-full mt-8 lg:mt-0 overflow-y-auto">
-            {activeTab === "ABOUT" && <AboutContent />}
-            {activeTab === "RESUME" && <ResumeContent />}
-            {activeTab === "WORKS" && <WorksContent />}
-            {activeTab === "BLOG" && <BlogContent />}
-            {activeTab === "CONTACT" && <ContactContent />}
-            {activeTab === "PRODUCTS" && <ProductsContent />}
+          <div className="flex-1 w-full mt-8 lg:mt-0 overflow-y-auto custom-scrollbar overflow-x-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="w-full min-h-full"
+              >
+                {activeTab === "ABOUT" && <AboutContent />}
+                {activeTab === "RESUME" && <ResumeContent />}
+                {activeTab === "WORKS" && <WorksContent />}
+                {activeTab === "BLOG" && <BlogContent />}
+                {activeTab === "CONTACT" && <ContactContent />}
+                {activeTab === "PRODUCTS" && <ProductsContent />}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
         </div>

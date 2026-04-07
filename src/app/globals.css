@@ -36,3 +36,27 @@
   95% { width: 0; border-right-color: #F6B846; }
   96%, 100% { width: 0; border-right-color: transparent; }
 }
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(34, 34, 34, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #F6B846;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d49a35;
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #F6B846 rgba(34, 34, 34, 0.5);
+}

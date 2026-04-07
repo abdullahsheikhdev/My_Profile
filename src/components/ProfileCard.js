@@ -11,9 +11,9 @@ const InstagramIcon = ({ size = 18 }) => <svg width={size} height={size} viewBox
 
 export default function ProfileCard() {
   return (
-    <div className="w-102.5 bg-[#1a1a1a] rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-[#2a2a2a]">
+    <div className="w-115 bg-[#1a1a1a] rounded-sm overflow-hidden flex flex-col shadow-2xl border border-[#2a2a2a]">
       {/* Cover Image Area */}
-      <div className="relative h-59 w-full bg-linear-to-br from-orange-400 to-purple-800">
+      <div className="relative h-79 w-full bg-linear-to-br from-orange-400 to-purple-800">
         {/* <div className="absolute inset-0 bg-black/20" /> */}
         {/* Semicircle cutout effect for avatar */}
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-36 h-17 bg-[#1a1a1a] rounded-t-full" />

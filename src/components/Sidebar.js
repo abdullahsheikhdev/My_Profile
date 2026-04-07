@@ -22,7 +22,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <div className="flex flex-row md:flex-col w-full md:w-20 bg-[#161616] border border-[#2a2a2a] rounded-xl overflow-hidden shadow-2xl h-auto md:h-fit shrink-0">
+    <div className="flex flex-row md:flex-col w-full md:w-20 bg-[#161616] border border-[#2a2a2a] rounded-sm overflow-hidden shadow-2xl h-auto md:h-fit shrink-0">
       {/* Top section */}
       <div className="hidden md:flex flex-col items-center py-4 gap-4 border-b border-[#2a2a2a] bg-[#1a1a1a]">
         <button className="text-gray-400 hover:text-white transition-colors duration-200">
