@@ -10,6 +10,11 @@ export default function BlogContent() {
         <p className="text-sm leading-relaxed mb-8">
           The Blog section is currently under construction. Please check back later!
         </p>
+        <p className="text-sm leading-relaxed mb-8">
+          Hello! I&apos;m Abdullah Sheikh. <br />
+          I’m a full-stack developer specializing in building fast, scalable, and user-focused web applications. I bridge the gap between design and functionality to deliver seamless digital experiences.
+          I develop scalable web applications with clean architecture and smooth user experience.
+        </p>
       </div>
     </div>
   );

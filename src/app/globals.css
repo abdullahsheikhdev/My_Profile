@@ -73,13 +73,22 @@
   transition: color 0.3s ease;
 }
 
-.light-mode svg {
+/* .light-mode svg {
   color: black !important;
   stroke: black !important;
   transition: color 0.3s ease, stroke 0.3s ease;
-}
+} */
 
 /* Background transition */
 .bg-transition {
   transition: background-color 0.3s ease;
+}
+
+.gradient-border {
+  border-top: 2px solid ;
+  border-image: linear-gradient(to right,#1a1a1a,#2a2a2a,#2a2a2a,#1a1a1a ) 1;
+}
+.gradient-border-white {
+  border-top: 2px solid ;
+  border-image: linear-gradient(to right,white,#ccc,#ccc,white ) 1;
 }

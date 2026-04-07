@@ -29,10 +29,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
   return (
     <div className={`flex flex-row md:flex-col w-full md:w-20 ${darkMode ? "bg-[#161616]/90" : "bg-white/90"} backdrop-blur-md border ${darkMode ? "border-[#2a2a2a]" : "border-gray-200"} rounded-sm overflow-hidden shadow-2xl h-auto md:h-fit shrink-0 transition-all duration-300`}>
       {/* Top section */}
-      <div className={`hidden md:flex flex-col items-center py-4 gap-4 border-b ${darkMode ? "border-[#2a2a2a]" : "border-gray-200"} ${darkMode ? "bg-[#1a1a1a]/50" : "bg-gray-50/50"} transition-colors duration-300`}>
-        <button className="text-gray-400 hover:text-[#F6B846] transition-colors duration-200 cursor-pointer">
-          <Menu size={18} />
-        </button>
+      <div className={`flex flex-col items-center py-4 gap-4 border-b ${darkMode ? "border-[#2a2a2a]" : "border-gray-200"} ${darkMode ? "bg-[#1a1a1a]/50" : "bg-gray-50/50"} transition-colors duration-300`}>
         <button 
           onClick={() => dispatch(toggleTheme())}
           className={`${darkMode ? "text-gray-400" : "text-[#F6B846]"} hover:text-[#F6B846] transition-colors duration-200 cursor-pointer`}
@@ -52,7 +49,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
               className={`flex flex-col items-center justify-center p-1 md:p-4 gap-0.5 md:gap-1 min-w-14 sm:min-w-16 md:min-w-0 transition-all duration-300 relative group cursor-pointer ${
                 isActive
                   ? "text-[#F6B846]"
-                  : "text-gray-500 hover:text-[#F6B846]"
+                  : "text-gray-600 hover:text-[#F6B846]"
               }`}
             >
               {/* Active Indicator (Desktop) */}

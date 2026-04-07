@@ -15,7 +15,7 @@ export default function ProfileCard() {
   const darkMode = useSelector((state) => state.theme.darkMode);
 
   return (
-    <div className={`w-full max-w-115 lg:w-115 ${darkMode ? "bg-[#1a1a1a]" : "bg-white"} rounded-sm overflow-hidden flex flex-col shadow-2xl border ${darkMode ? "border-[#2a2a2a]" : "border-[#ccc]"}  transition-colors duration-300 shrink-0 lg:shrink-0`}>
+    <div className={`w-full max-w-115 lg:w-115 ${darkMode ? "bg-[#1a1a1a]" : "bg-white"} rounded-sm overflow-hidden flex flex-col shadow-2xl  transition-colors duration-300 shrink-0 lg:shrink-0`}>
       {/* Cover Image Area */}
       <div className="relative h-79 w-full bg-linear-to-br from-orange-400 to-purple-800">
         {/* <div className="absolute inset-0 bg-black/20" /> */}
@@ -47,16 +47,16 @@ export default function ProfileCard() {
 
       {/* Social Icons */}
       <div className="flex justify-center gap-4 mt-8 text-gray-400">
-        <button className="hover:text-white transition-colors">
+        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <InstagramIcon size={28} />
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <TwitterIcon size={28} />
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <GithubIcon size={28} />
         </button>
-        <button className="hover:text-white transition-colors">
+        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <MessageCircle size={28} />
         </button>
       </div>
@@ -65,12 +65,12 @@ export default function ProfileCard() {
       <div className="grow min-h-10"></div>
 
       {/* Bottom Buttons */}
-      <div className="flex border-t border-[#2a2a2a]">
-        <button className="flex-1 flex items-center justify-center gap-2 py-5 text-xs font-bold text-gray-300 hover:text-white hover:bg-[#252525] transition-all">
+      <div className={`flex border-t ${darkMode ? "gradient-border" : "gradient-border-white"}`}>
+        <button className={`flex-1 flex items-center justify-center gap-2 py-5 text-xs font-bold text-gray-300 hover:text-white hover:bg-[#252525] ${darkMode ? "text-gray-300" : "text-gray-600"} transition-all`}>
           DOWNLOAD CV <CloudDownload size={16} />
         </button>
-        <div className="w-px bg-[#2a2a2a]"></div>
-        <button className="flex-1 flex items-center justify-center gap-2 py-5 text-xs font-bold text-gray-300 hover:text-white hover:bg-[#252525] transition-all">
+        <div className={`w-0.5 ${darkMode ? "bg-linear-to-b from-[#2a2a2a] to-[#1a1a1a]" : "bg-linear-to-b from-[#ccc] to-white"}`}></div>
+        <button className={`flex-1 flex items-center justify-center gap-2 py-5 text-xs font-bold text-gray-300 hover:text-white hover:bg-[#252525] ${darkMode ? "text-gray-300" : "text-gray-600"} transition-all`}>
           CONTACT ME <Send size={16} />
         </button>
       </div>

@@ -30,8 +30,8 @@ export default function Home() {
   }
 
   return (
-    <main className={`min-h-screen flex items-center justify-center p-4 md:p-8 transition-colors duration-300 overflow-hidden ${darkMode ? "dark-mode" : "light-mode"}`}>
-      <div className="flex flex-col md:flex-row gap-3 md:gap-6 max-w-315 w-full items-center md:items-stretch">
+    <main className={`min-h-screen flex items-start lg:items-center justify-center p-4 md:p-8 transition-colors duration-300 overflow-x-hidden overflow-y-auto lg:overflow-hidden ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <div className="flex flex-col md:flex-row gap-3 md:gap-6 max-w-[1260px] w-full items-center md:items-stretch">
         
         {/* Sidebar - Horizontal on top in mobile, vertical on left in desktop */}
         <div className="w-full md:w-auto shrink-0 md:pt-4">
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
 
         {/* Main Content Area */}
-        <div className={`flex flex-col lg:flex-row flex-1 h-160 ${darkMode ? "bg-[#222222] bg-opacity-70" : "bg-white bg-opacity-90"} backdrop-blur-sm rounded-sm shadow-xl w-full p-6 lg:p-0 mt-4 md:mt-0 relative overflow-visible transition-colors duration-300`}>
+        <div className={`flex flex-col lg:flex-row flex-1 h-auto lg:h-160 ${darkMode ? "bg-[#222222] bg-opacity-70" : "bg-white bg-opacity-90"} backdrop-blur-sm rounded-sm shadow-xl w-full p-6 lg:p-0 mt-4 md:mt-0 relative overflow-visible transition-colors duration-300`}>
           
           {/* Profile Card slightly overflowing on desktop, stacked normally on mobile */}
           <div className="flex justify-center lg:justify-start z-10 lg:-translate-x-4 lg:-my-4 shrink-0">
