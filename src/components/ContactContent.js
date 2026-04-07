@@ -1,14 +1,17 @@
+import { useSelector } from "react-redux";
+
 export default function ContactContent() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
   return (
     <div className="flex-1 max-w-full text-gray-400 p-6 sm:p-10 flex flex-col min-h-full">
       {/* Title */}
-      <h2 className="text-xl font-bold text-white relative inline-block mb-6">
+      <h2 className={`text-xl font-bold ${darkMode ? "text-white" : "text-black"} relative inline-block mb-6`}>
         <span className="absolute -left-2 top-1.5 w-8 h-8 bg-linear-to-br from-[#F6B846] to-[#373126] rounded-full opacity-40 -z-10"></span>
         <span className="relative z-10 text-[#F6B846]">G</span>et in Touch
       </h2>
 
       {/* Main Container with top border */}
-      <div className="border-t border-[#333] pt-8 flex flex-col gap-10 w-full">
+      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-8 flex flex-col gap-10 w-full`}>
         
         {/* Map Section */}
         <div className="w-full h-62.5 sm:h-75 relative rounded-md overflow-hidden bg-zinc-800">

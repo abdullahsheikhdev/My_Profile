@@ -87,3 +87,11 @@ Custom Scrollbar
   border-top: 2px solid ;
   border-image: linear-gradient(to right,white,#ccc,#ccc,white ) 1;
 }
+.gradient-border-content {
+  border-top: 2px solid ;
+  border-image: linear-gradient(to right,#2a2a2a,#222222 ) 1;
+}
+.gradient-border-content-white {
+  border-top: 2px solid ;
+  border-image: linear-gradient(to right,#ccc,white ) 1;
+}

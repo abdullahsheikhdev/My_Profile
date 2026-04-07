@@ -53,7 +53,7 @@ export default function ResumeContent() {
         <span className="relative z-10 text-[#F6B846]">R</span>esume
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-5 grid grid-cols-1 md:grid-cols-2 gap-12`}>
         {/* Experience Column */}
         <div className="flex flex-col">
           <div className="flex items-center gap-4 mb-10">
@@ -152,7 +152,7 @@ export default function ResumeContent() {
         <span className="relative z-10 text-[#F6B846]">S</span>kills
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-5 grid grid-cols-1 md:grid-cols-2 gap-12`}>
         {/* Coding Skills */}
         <div className={`flex flex-col md:border-r ${darkMode ? "md:border-[#333]" : "md:border-gray-200"} md:pr-12`}>
           <div className="flex items-center gap-4 mb-10">

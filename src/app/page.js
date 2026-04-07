@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <main className={`min-h-screen flex items-start lg:items-center justify-center p-4 md:p-8 transition-colors duration-300 overflow-x-hidden overflow-y-auto lg:overflow-hidden ${darkMode ? "dark-mode" : "light-mode"}`}>
+    <main className={`min-h-screen flex items-start lg:items-center justify-center p-4 md:p-8 transition-colors duration-300 ${darkMode ? "dark-mode" : "light-mode"}`}>
       <div className="flex flex-col md:flex-row gap-3 md:gap-6 max-w-315 w-full items-center md:items-stretch">
         
         {/* Sidebar - Horizontal on top in mobile, vertical on left in desktop */}

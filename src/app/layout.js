@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`{lekton.className} relative z-0 truncate overflow-hidden h-screen w-full bg-[#161616]`}
+        className={`${lekton.className} relative z-0 w-full bg-[#161616]`}
       >
         <ReduxProvider>
           <Background />
