@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <main className={`min-h-screen flex items-start lg:items-center justify-center p-4 md:p-8 transition-colors duration-300 overflow-x-hidden overflow-y-auto lg:overflow-hidden ${darkMode ? "dark-mode" : "light-mode"}`}>
-      <div className="flex flex-col md:flex-row gap-3 md:gap-6 max-w-[1260px] w-full items-center md:items-stretch">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-6 max-w-315 w-full items-center md:items-stretch">
         
         {/* Sidebar - Horizontal on top in mobile, vertical on left in desktop */}
         <div className="w-full md:w-auto shrink-0 md:pt-4">
@@ -43,7 +43,7 @@ export default function Home() {
           
           {/* Profile Card slightly overflowing on desktop, stacked normally on mobile */}
           <div className="flex justify-center lg:justify-start z-10 lg:-translate-x-4 lg:-my-4 shrink-0">
-             <ProfileCard />
+            <ProfileCard />
           </div>
 
           {/* Right Content */}

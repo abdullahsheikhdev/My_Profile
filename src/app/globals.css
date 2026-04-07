@@ -37,7 +37,7 @@
   96%, 100% { width: 0; border-right-color: transparent; }
 }
 
-/* Custom Scrollbar */
+Custom Scrollbar
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
@@ -73,11 +73,6 @@
   transition: color 0.3s ease;
 }
 
-/* .light-mode svg {
-  color: black !important;
-  stroke: black !important;
-  transition: color 0.3s ease, stroke 0.3s ease;
-} */
 
 /* Background transition */
 .bg-transition {
