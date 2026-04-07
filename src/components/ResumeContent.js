@@ -1,7 +1,10 @@
 import { Briefcase, GraduationCap, Code2, List, Check } from "lucide-react";
 import { motion } from "motion/react";
+import { useSelector } from "react-redux";
 
 export default function ResumeContent() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+
   const experiences = [
     {
       date: "2018 - Present",
@@ -43,9 +46,9 @@ export default function ResumeContent() {
   ];
 
   return (
-    <div className="flex-1 max-w-full text-gray-400 p-6 sm:p-10 flex flex-col min-h-full">
+    <div className={`flex-1 max-w-full ${darkMode ? "text-gray-400" : "text-gray-600"} p-6 sm:p-10 flex flex-col min-h-full`}>
       {/* Title */}
-      <h2 className="text-xl font-bold text-white mb-10 relative inline-block">
+      <h2 className={`text-xl font-bold ${darkMode ? "text-white" : "text-black"} mb-10 relative inline-block`}>
         <span className="absolute -left-2 top-1.5 w-8 h-8 bg-linear-to-br from-[#F6B846] to-[#373126] rounded-full opacity-40 -z-10"></span>
         <span className="relative z-10 text-[#F6B846]">R</span>esume
       </h2>
@@ -57,33 +60,33 @@ export default function ResumeContent() {
              <div className="w-12 h-12 rounded-full border border-[#F6B846] flex items-center justify-center text-[#F6B846]">
                 <Briefcase size={20} />
              </div>
-             <h3 className="text-white font-bold tracking-widest text-sm">EXPERIENCE</h3>
+             <h3 className={`${darkMode ? "text-white" : "text-black"} font-bold tracking-widest text-sm`}>EXPERIENCE</h3>
           </div>
 
-          <div className="relative border-l border-[#333] ml-6 pl-8 flex flex-col gap-12">
+          <div className={`relative border-l ${darkMode ? "border-[#333]" : "border-gray-200"} ml-6 pl-8 flex flex-col gap-12`}>
             {experiences.map((exp, index) => (
               <div key={index} className="relative group">
                 {/* Dot */}
                 <div 
                   className={`absolute -left-9.25 top-1.5 w-3 h-3 rounded-full border-2 ${
-                    exp.active ? "bg-[#F6B846] border-[#F6B846] shadow-[0_0_10px_#F6B846]" : "bg-[#222] border-[#444]"
+                    exp.active ? "bg-[#F6B846] border-[#F6B846] shadow-[0_0_10px_#F6B846]" : darkMode ? "bg-[#222] border-[#444]" : "bg-white border-gray-300"
                   }`}
                 ></div>
                 
                 {/* Date Badge */}
                 <div className={`inline-block px-3 py-0.5 rounded-sm border text-[10px] font-bold mb-4 ${
-                  exp.active ? "border-[#F6B846] text-[#F6B846]" : "border-[#444] text-[#888]"
+                  exp.active ? "border-[#F6B846] text-[#F6B846]" : darkMode ? "border-[#444] text-[#888]" : "border-gray-300 text-gray-500"
                 }`}>
                   {exp.date}
                 </div>
 
                 <div className="flex justify-between items-start mb-2">
                    <div>
-                      <h4 className="text-white font-bold text-lg mb-1">{exp.title}</h4>
+                      <h4 className={`font-bold text-lg mb-1 ${darkMode ? "text-white" : "text-black"}`}>{exp.title}</h4>
                       <p className="text-gray-500 text-xs">{exp.company}</p>
                    </div>
                    {exp.logo && (
-                     <span className="text-zinc-700 font-bold text-xl select-none opacity-50 tracking-tighter italic">
+                     <span className={`${darkMode ? "text-zinc-700" : "text-gray-200"} font-bold text-xl select-none opacity-50 tracking-tighter italic`}>
                        {exp.logo}
                      </span>
                    )}
@@ -107,27 +110,27 @@ export default function ResumeContent() {
              <div className="w-12 h-12 rounded-full border border-[#F6B846] flex items-center justify-center text-[#F6B846]">
                 <GraduationCap size={20} />
              </div>
-             <h3 className="text-white font-bold tracking-widest text-sm">EDUCATION</h3>
+             <h3 className={`${darkMode ? "text-white" : "text-black"} font-bold tracking-widest text-sm`}>EDUCATION</h3>
           </div>
 
-          <div className="relative border-l border-[#333] ml-6 pl-8 flex flex-col gap-12">
+          <div className={`relative border-l ${darkMode ? "border-[#333]" : "border-gray-200"} ml-6 pl-8 flex flex-col gap-12`}>
             {education.map((edu, index) => (
               <div key={index} className="relative group">
                 {/* Dot */}
                 <div 
                   className={`absolute -left-9.25 top-1.5 w-3 h-3 rounded-full border-2 ${
-                    edu.active ? "bg-[#F6B846] border-[#F6B846] shadow-[0_0_10px_#F6B846]" : "bg-[#222] border-[#444]"
+                    edu.active ? "bg-[#F6B846] border-[#F6B846] shadow-[0_0_10px_#F6B846]" : darkMode ? "bg-[#222] border-[#444]" : "bg-white border-gray-300"
                   }`}
                 ></div>
                 
                 {/* Date Badge */}
                 <div className={`inline-block px-3 py-0.5 rounded-sm border text-[10px] font-bold mb-4 ${
-                  edu.active ? "border-[#F6B846] text-[#F6B846]" : "border-[#444] text-[#888]"
+                  edu.active ? "border-[#F6B846] text-[#F6B846]" : darkMode ? "border-[#444] text-[#888]" : "border-gray-300 text-gray-500"
                 }`}>
                   {edu.date}
                 </div>
 
-                <h4 className="text-white font-bold text-lg mb-1">{edu.title}</h4>
+                <h4 className={`font-bold text-lg mb-1 ${darkMode ? "text-white" : "text-black"}`}>{edu.title}</h4>
                 <p className="text-gray-500 text-xs mb-4">{edu.location}</p>
 
                 <p className="text-xs leading-relaxed text-gray-500 mb-6">
@@ -144,19 +147,19 @@ export default function ResumeContent() {
       </div>
 
       {/* Skills Section */}
-      <h2 className="text-xl font-bold text-white mb-10 mt-20 relative inline-block">
+      <h2 className={`text-xl font-bold ${darkMode ? "text-white" : "text-black"} mb-10 mt-20 relative inline-block`}>
         <span className="absolute -left-2 top-1.5 w-8 h-8 bg-linear-to-br from-[#F6B846] to-[#373126] rounded-full opacity-40 -z-10"></span>
         <span className="relative z-10 text-[#F6B846]">S</span>kills
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Coding Skills */}
-        <div className="flex flex-col md:border-r md:border-[#333] md:pr-12">
+        <div className={`flex flex-col md:border-r ${darkMode ? "md:border-[#333]" : "md:border-gray-200"} md:pr-12`}>
           <div className="flex items-center gap-4 mb-10">
              <div className="w-12 h-12 rounded-full border border-[#F6B846] flex items-center justify-center text-[#F6B846]">
                 <Code2 size={20} />
              </div>
-             <h3 className="text-white font-bold tracking-widest text-sm">CODING</h3>
+             <h3 className={`${darkMode ? "text-white" : "text-black"} font-bold tracking-widest text-sm`}>CODING</h3>
           </div>
 
           <div className="grid grid-cols-2 gap-8 ml-4">
@@ -176,7 +179,7 @@ export default function ResumeContent() {
                         stroke="currentColor"
                         strokeWidth="4"
                         fill="transparent"
-                        className="text-[#2a2a2a]"
+                        className={darkMode ? "text-[#2a2a2a]" : "text-gray-100"}
                       />
                       <motion.circle
                         cx="56"
@@ -193,11 +196,11 @@ export default function ResumeContent() {
                         className="text-[#F6B846]"
                       />
                     </svg>
-                    <span className="absolute text-white font-bold text-sm">
+                    <span className={`absolute font-bold text-sm ${darkMode ? "text-white" : "text-black"}`}>
                       {skill.percent}%
                     </span>
                   </div>
-                  <span className="text-gray-300 font-bold text-[10px] tracking-widest text-center whitespace-pre-line leading-tight">
+                  <span className={`${darkMode ? "text-gray-300" : "text-gray-600"} font-bold text-[10px] tracking-widest text-center whitespace-pre-line leading-tight`}>
                     {skill.name}
                   </span>
                </div>
@@ -211,7 +214,7 @@ export default function ResumeContent() {
              <div className="w-12 h-12 rounded-full border border-[#F6B846] flex items-center justify-center text-[#F6B846]">
                 <List size={20} />
              </div>
-             <h3 className="text-white font-bold tracking-widest text-sm">KNOWLEDGE</h3>
+             <h3 className={`${darkMode ? "text-white" : "text-black"} font-bold tracking-widest text-sm`}>KNOWLEDGE</h3>
           </div>
 
           <ul className="flex flex-col gap-5 ml-6">
@@ -229,7 +232,7 @@ export default function ResumeContent() {
                 <div className="mt-0.5 text-[#F6B846]">
                    <Check size={16} strokeWidth={3} />
                 </div>
-                <span className="text-gray-400 group-hover:text-white transition-colors cursor-default">
+                <span className={`${darkMode ? "text-gray-400" : "text-gray-600"} group-hover:text-[#F6B846] transition-colors cursor-default`}>
                   {item}
                 </span>
               </li>
@@ -240,3 +243,4 @@ export default function ResumeContent() {
     </div>
   );
 }
+

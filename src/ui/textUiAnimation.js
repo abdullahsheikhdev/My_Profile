@@ -1,10 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function TextUiAnimation() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
   return (
     <span className="inline-flex items-center text-left w-60 justify-start">
       <span className="whitespace-nowrap">I'm a&nbsp;</span>
-      <span className="inline-flex flex-col h-5 overflow-hidden align-bottom text-white">
+      <span className={`inline-flex flex-col h-5 overflow-hidden align-bottom ${darkMode ? "text-white" : "text-black"}`}>
         <span className="animate-[slideText_12s_steps(4)_infinite] flex flex-col items-start leading-5">
           <span className="h-5 flex items-center relative overflow-hidden">
             <span className="animate-[typingWidth_3s_linear_infinite] whitespace-nowrap overflow-hidden border-r-2 border-transparent">Front-end Developer </span>

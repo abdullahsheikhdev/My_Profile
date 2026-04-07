@@ -60,3 +60,26 @@
   scrollbar-width: thin;
   scrollbar-color: #F6B846 rgba(34, 34, 34, 0.5);
 }
+
+/* Theme Classes */
+.theme-wrapper {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode h2,
+.light-mode h3,
+.light-mode h4 {
+  color: black !important;
+  transition: color 0.3s ease;
+}
+
+.light-mode svg {
+  color: black !important;
+  stroke: black !important;
+  transition: color 0.3s ease, stroke 0.3s ease;
+}
+
+/* Background transition */
+.bg-transition {
+  transition: background-color 0.3s ease;
+}

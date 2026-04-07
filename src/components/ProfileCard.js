@@ -1,5 +1,7 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { useSelector } from "react-redux";
 import { CloudDownload, Send, MessageCircle } from "lucide-react";
 import profilePic from "@/assets/IMG_2279_1.jpg";
 import TextUiAnimation from "@/ui/textUiAnimation";
@@ -10,18 +12,20 @@ const InstagramIcon = ({ size = 18 }) => <svg width={size} height={size} viewBox
 
 
 export default function ProfileCard() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+
   return (
-    <div className="w-115 bg-[#1a1a1a] rounded-sm overflow-hidden flex flex-col shadow-2xl border border-[#2a2a2a]">
+    <div className={`w-full max-w-115 lg:w-115 ${darkMode ? "bg-[#1a1a1a]" : "bg-white"} rounded-sm overflow-hidden flex flex-col shadow-2xl border ${darkMode ? "border-[#2a2a2a]" : "border-[#ccc]"}  transition-colors duration-300 shrink-0 lg:shrink-0`}>
       {/* Cover Image Area */}
       <div className="relative h-79 w-full bg-linear-to-br from-orange-400 to-purple-800">
         {/* <div className="absolute inset-0 bg-black/20" /> */}
         {/* Semicircle cutout effect for avatar */}
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-36 h-17 bg-[#1a1a1a] rounded-t-full" />
+        <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-36 h-17 ${darkMode ? "bg-[#1a1a1a]" : "bg-white"} rounded-t-full`} />
       </div>
 
       {/* Avatar Container */}
       <div className="relative flex justify-center -mt-16">
-        <div className="relative w-32 h-32 rounded-full border-4 border-[#1a1a1a] overflow-hidden z-10">
+        <div className={`relative w-32 h-32 rounded-full border-4 ${darkMode ? "border-[#1a1a1a]" : "border-[#ccc]"} overflow-hidden z-10`}>
           <Image
             src={profilePic}
             alt="Profile Picture"

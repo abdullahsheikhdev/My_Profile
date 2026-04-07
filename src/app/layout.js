@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Lekton } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/background";
+import ReduxProvider from "@/components/ReduxProvider";
 
 const lekton = Lekton({
   subsets: ["latin"],
@@ -16,10 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`{lekton.className} relative z-0`}
+        className={`{lekton.className} relative z-0 truncate overflow-hidden h-screen w-full bg-[#161616]`}
       >
-        <Background />
-        {children}
+        <ReduxProvider>
+          <Background />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
