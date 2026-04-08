@@ -7,23 +7,23 @@ export default function ResumeContent() {
 
   const experiences = [
     {
-      date: "2018 - Present",
-      title: "Team Leader",
-      company: "Facebook Inc.",
-      logo: "facebook",
-      description: "Collaborate with creative and development teams.",
+      date: "2026 - Present",
+      title: "Front-end Developer",
+      company: "Working on E-Commerce application",
+      logo: "Next.js",
+      description: "I work and build a full functional E-commerce application using Next.js and backend using prisma also I use SQL for database.",
       linkText: "RECOMMENDATION >",
       active: true,
     },
-    {
-      date: "2016 - 2018",
-      title: "Web Developer",
-      company: "Upwork Inc.",
-      logo: "Upwork",
-      description: "Monitored technical aspects of the front-end delivery for projects.",
-      linkText: "RECOMMENDATION >",
-      active: false,
-    },
+    // {
+    //   date: "2026",
+    //   title: "Web Developer",
+    //   company: "Upwork Inc.",
+    //   logo: "Upwork",
+    //   description: "Monitored technical aspects of the front-end delivery for projects.",
+    //   linkText: "RECOMMENDATION >",
+    //   active: false,
+    // },
   ];
 
   const education = [
@@ -36,13 +36,21 @@ export default function ResumeContent() {
       active: true,
     },
     {
-      date: "2009 - 2010",
-      title: "Programming Course",
-      location: "London",
-      description: "Coursework - Git, WordPress, Javascript, iOS, Android.",
+      date: "2020 - 2021",
+      title: "HSC",
+      location: "Khulna, Bangladesh",
+      description: "Built a strong foundation in science",
       linkText: "CERTIFICATE >",
       active: false,
     },
+    {
+      date: "2018 - 2019",
+      title: "ssc",
+      location: "Khulna, Bangladesh",
+      description: "Focused on learning , discipline and consistency",
+      linkText: "CERTIFICATE >",
+      active: false,
+    }
   ];
 
   return (
@@ -53,7 +61,7 @@ export default function ResumeContent() {
         <span className="relative z-10 text-[#F6B846]">R</span>esume
       </h2>
 
-      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-5 grid grid-cols-1 md:grid-cols-2 gap-12`}>
+      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-5 grid grid-cols-1 xl:grid-cols-2 gap-12`}>
         {/* Experience Column */}
         <div className="flex flex-col">
           <div className="flex items-center gap-4 mb-10">
@@ -152,7 +160,7 @@ export default function ResumeContent() {
         <span className="relative z-10 text-[#F6B846]">S</span>kills
       </h2>
 
-      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-5 grid grid-cols-1 md:grid-cols-2 gap-12`}>
+      <div className={`border-t ${darkMode ? "gradient-border-content" : "gradient-border-content-white"} pt-5 grid grid-cols-1 xl:grid-cols-2 gap-12`}>
         {/* Coding Skills */}
         <div className={`flex flex-col md:border-r ${darkMode ? "md:border-[#333]" : "md:border-gray-200"} md:pr-12`}>
           <div className="flex items-center gap-4 mb-10">
@@ -166,7 +174,7 @@ export default function ResumeContent() {
              {[
                { name: "JavaScript", percent: 90 },
                { name: "MYSQL", percent: 55 },
-               { name: "N", percent: 85 },
+               { name: "Next.js", percent: 85 },
                { name: "HTML / CSS", percent: 95 },
              ].map((skill, index) => (
                <div key={index} className="flex flex-col items-center gap-4">

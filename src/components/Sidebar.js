@@ -7,7 +7,6 @@ import {
   Eye,
   BookOpen,
   Send,
-  LayoutList,
 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "@/store/themeSlice";
@@ -22,7 +21,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
     { icon: Eye, label: "WORKS", id: "WORKS" },
     { icon: BookOpen, label: "BLOG", id: "BLOG" },
     { icon: Send, label: "CONTACT", id: "CONTACT" },
-    { icon: LayoutList, label: "PRODUCTS", id: "PRODUCTS" },
+
   ];
 
   return (
