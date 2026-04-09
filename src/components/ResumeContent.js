@@ -228,7 +228,7 @@ export default function ResumeContent() {
           <ul className="flex flex-col gap-5 ml-6">
             {[
               "Website hosting",
-              "WordPress Development",
+              "Next.js and React.js",
               "Hosting Installation",
               "SEO Optimize",
               "Responsive and mobile-ready",
