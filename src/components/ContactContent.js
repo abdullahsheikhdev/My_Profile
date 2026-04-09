@@ -18,6 +18,8 @@ export default function ContactContent() {
         () => alert("Message sent successfully!"),
         () => alert("Failed to send message."),
       );
+
+    e.target.reset();
   };
 
   return (

@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 export default function ResumeContent() {
   const darkMode = useSelector((state) => state.theme.darkMode);
 
-  const experiences = [
+  const Projects = [
     {
-      date: "2026 - Present",
+      date: "2025",
       title: "Front-end Developer",
       company: "Working on E-Commerce application",
       logo: "Next.js",
@@ -68,44 +68,44 @@ export default function ResumeContent() {
              <div className="w-12 h-12 rounded-full border border-[#F6B846] flex items-center justify-center text-[#F6B846]">
                 <Briefcase size={20} />
              </div>
-             <h3 className={`${darkMode ? "text-white" : "text-black"} font-bold tracking-widest text-sm`}>EXPERIENCE</h3>
+             <h3 className={`${darkMode ? "text-white" : "text-black"} font-bold tracking-widest text-sm`}>Projects</h3>
           </div>
 
           <div className={`relative border-l ${darkMode ? "border-[#333]" : "border-gray-200"} ml-6 pl-8 flex flex-col gap-12`}>
-            {experiences.map((exp, index) => (
+            {Projects.map((project, index) => (
               <div key={index} className="relative group">
                 {/* Dot */}
                 <div 
                   className={`absolute -left-9.25 top-1.5 w-3 h-3 rounded-full border-2 ${
-                    exp.active ? "bg-[#F6B846] border-[#F6B846] shadow-[0_0_10px_#F6B846]" : darkMode ? "bg-[#222] border-[#444]" : "bg-white border-gray-300"
+                    project.active ? "bg-[#F6B846] border-[#F6B846] shadow-[0_0_10px_#F6B846]" : darkMode ? "bg-[#222] border-[#444]" : "bg-white border-gray-300"
                   }`}
                 ></div>
                 
                 {/* Date Badge */}
                 <div className={`inline-block px-3 py-0.5 rounded-sm border text-[10px] font-bold mb-4 ${
-                  exp.active ? "border-[#F6B846] text-[#F6B846]" : darkMode ? "border-[#444] text-[#888]" : "border-gray-300 text-gray-500"
+                  project.active ? "border-[#F6B846] text-[#F6B846]" : darkMode ? "border-[#444] text-[#888]" : "border-gray-300 text-gray-500"
                 }`}>
-                  {exp.date}
+                  {project.date}
                 </div>
 
                 <div className="flex justify-between items-start mb-2">
                    <div>
-                      <h4 className={`font-bold text-lg mb-1 ${darkMode ? "text-white" : "text-black"}`}>{exp.title}</h4>
-                      <p className="text-gray-500 text-xs">{exp.company}</p>
+                      <h4 className={`font-bold text-lg mb-1 ${darkMode ? "text-white" : "text-black"}`}>{project.title}</h4>
+                      <p className="text-gray-500 text-xs">{project.company}</p>
                    </div>
-                   {exp.logo && (
+                   {project.logo && (
                      <span className={`${darkMode ? "text-zinc-700" : "text-gray-200"} font-bold text-xl select-none opacity-50 tracking-tighter italic`}>
-                       {exp.logo}
+                       {project .logo}
                      </span>
                    )}
                 </div>
 
                 <p className="text-xs leading-relaxed text-gray-500 mb-6">
-                  {exp.description}
+                  {project.description}
                 </p>
 
                 <button className="text-[#F6B846] text-[10px] font-bold tracking-widest hover:underline text-left cursor-pointer transition-all">
-                  {exp.linkText}
+                  {project.linkText}
                 </button>
               </div>
             ))}
