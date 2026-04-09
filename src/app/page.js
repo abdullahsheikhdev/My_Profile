@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
 import ProfileCard from "@/components/ProfileCard";
 import AboutContent from "@/components/AboutContent";
@@ -17,6 +17,16 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("ABOUT");
   const [isLoading, setIsLoading] = useState(true);
   const darkMode = useSelector((state) => state.theme.darkMode);
+
+  const activeTabRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    // Scroll to content on mobile/tablet when tab changes
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeTab]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -47,7 +57,7 @@ export default function Home() {
           </div>
 
           {/* Right Content */}
-          <div className="flex-1 min-w-0 w-full mt-8 lg:mt-0 overflow-y-auto custom-scrollbar overflow-x-hidden">
+          <div ref={contentRef} className="flex-1 min-w-0 w-full mt-8 lg:mt-0 overflow-y-auto custom-scrollbar overflow-x-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
