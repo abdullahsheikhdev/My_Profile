@@ -7,7 +7,7 @@ import profilePic from "@/assets/IMG_2279_1.jpg";
 import TextUiAnimation from "@/ui/textUiAnimation";
 
 const GithubIcon = ({ size = 18 }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3-.3 6-1.5 6-6.5a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 5 3 6.2 6 6.5a4.8 4.8 0 0 0-1 3.2v4"/><path d="M9 18c-4.5 1.6-5-2.5-7-3"/></svg>;
-const TwitterIcon = ({ size = 18 }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>;
+const TwitterIcon = ({ size = 18 }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.134l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>;
 const InstagramIcon = ({ size = 18 }) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>;
 
 
@@ -47,16 +47,16 @@ export default function ProfileCard() {
 
       {/* Social Icons */}
       <div className="flex justify-center gap-4 mt-8 text-gray-400">
-        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
+        <button onClick={() => window.open('https://www.instagram.com/abdullahsheik4220/', '_blank')} className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <InstagramIcon size={28} />
         </button>
-        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
+        <button onClick={() => window.open("https://x.com/Abdullahsk4220")} className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <TwitterIcon size={28} />
         </button>
-        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
+        <button onClick={() => window.open("https://github.com/abdullahsheikhdev?tab=overview&from=2026-04-01&to=2026-04-09")} className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <GithubIcon size={28} />
         </button>
-        <button className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
+        <button onClick={() => window.open("https://web.whatsapp.com/")} className={`${darkMode ? "hover:text-white" : "hover:text-gray-800"} transition-colors`}>
           <MessageCircle size={28} />
         </button>
       </div>
