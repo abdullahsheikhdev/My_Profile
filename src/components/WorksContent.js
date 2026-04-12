@@ -9,24 +9,24 @@ const projects = [
     category: "Web Design",
     image: "/project/Screenshot 2026-04-11 211844.png",
   },
-  {
-    id: 2,
-    title: "Portfolio Website",
-    category: "Development",
-    image: "/project/Screenshot 2026-04-11 211844.png",
-  },
-  {
-    id: 3,
-    title: "Admin Dashboard",
-    category: "Software",
-    image: "/project/Screenshot 2026-04-11 211844.png",
-  },
-  {
-    id: 4,
-    title: "Mobile App UI",
-    category: "UI/UX Design",
-    image: "/project/Screenshot 2026-04-11 211844.png",
-  },
+  // {
+  //   id: 2,
+  //   title: "Portfolio Website",
+  //   category: "Development",
+  //   image: "/project/Screenshot 2026-04-11 211844.png",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Admin Dashboard",
+  //   category: "Software",
+  //   image: "/project/Screenshot 2026-04-11 211844.png",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Mobile App UI",
+  //   category: "UI/UX Design",
+  //   image: "/project/Screenshot 2026-04-11 211844.png",
+  // },
 ];
 
 const ProjectCard = ({ project, darkMode }) => (
