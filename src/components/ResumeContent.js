@@ -173,7 +173,7 @@ export default function ResumeContent() {
           <div className="grid grid-cols-2 gap-8 ml-4">
              {[
                { name: "JavaScript", percent: 90 },
-               { name: "MYSQL", percent: 55 },
+               { name: "SQL", percent: 55 },
                { name: "Next.js", percent: 85 },
                { name: "HTML / CSS", percent: 95 },
              ].map((skill, index) => (
@@ -233,8 +233,7 @@ export default function ResumeContent() {
               "SEO Optimize",
               "Responsive and mobile-ready",
               "Advertising services",
-              "HTML, CSS, jQuery",
-              "Search engine marketing",
+              "HTML, CSS, JavaScript",
             ].map((item, index) => (
               <li key={index} className="flex items-start gap-4 text-xs group">
                 <div className="mt-0.5 text-[#F6B846]">
